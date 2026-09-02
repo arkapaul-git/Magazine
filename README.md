@@ -1,0 +1,2 @@
+# Magazine
+Unified magazine website
