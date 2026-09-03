@@ -1,0 +1,52 @@
+/* ═══════════════════════════════════════════════════════════════
+   responsive.css — Responsive Breakpoint Overrides
+   Mobile-first media queries for global layout adjustments.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Small screens (max 640px) ─── */
+@media (max-width: 640px) {
+  :root {
+    --space-8: 1.5rem;
+    --space-12: 2rem;
+    --space-16: 3rem;
+    --space-24: 4rem;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  /* Hide on mobile */
+  .hide-mobile { display: none !important; }
+}
+
+/* ─── Medium screens (max 768px) ─── */
+@media (max-width: 768px) {
+  .hide-tablet { display: none !important; }
+}
+
+/* ─── Large screens (max 1024px) ─── */
+@media (max-width: 1024px) {
+  .hide-desktop { display: none !important; }
+}
+
+/* ─── Show only on specific breakpoints ─── */
+@media (min-width: 641px) {
+  .show-mobile-only { display: none !important; }
+}
+
+@media (min-width: 769px) {
+  .show-tablet-only { display: none !important; }
+}

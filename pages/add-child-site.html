@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Child Website — Magazine Platform</title>
+  <meta name="description" content="Add a new child website to the platform. Connect an existing site or create a new one with a custom navigation button name.">
+  <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="main-header header-inner-page" id="mainHeader">
+    <div class="container header-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8V9zm0 3h4v2h-4v-2zm0-6h8v2h-8V6z"/></svg>
+        </div>
+        <div>
+          <div class="logo-text">Magazine Platform</div>
+          <div class="logo-subtext">Read • Discover • Explore</div>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="../index.html#magazines">Magazines</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="dashboard.html" class="btn btn-sm btn-ghost">← Back to Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ WIZARD PAGE ═══ -->
+  <div class="wizard-page">
+    <div class="wizard">
+
+      <!-- Step Indicator -->
+      <div class="wizard-steps">
+        <div class="wizard-step">
+          <div class="wizard-step-circle active">
+            1
+            <span class="wizard-step-label">Details</span>
+          </div>
+        </div>
+        <div class="wizard-step-line"></div>
+        <div class="wizard-step">
+          <div class="wizard-step-circle">
+            2
+            <span class="wizard-step-label">Connection</span>
+          </div>
+        </div>
+        <div class="wizard-step-line"></div>
+        <div class="wizard-step">
+          <div class="wizard-step-circle">
+            3
+            <span class="wizard-step-label">Confirm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wizard Card -->
+      <div class="wizard-card">
+        <!-- ═══ STEP 1: Website Details ═══ -->
+        <div class="wizard-panel active" id="step1">
+          <div class="wizard-card-header">
+            <h2>Website Details</h2>
+            <p>Enter the basic information about the child website you want to add.</p>
+          </div>
+          <div class="wizard-card-body">
+            <form class="form" data-validate="true">
+              <div class="form-group">
+                <label class="form-label form-label-required" for="siteName">Website Name</label>
+                <input type="text" id="siteName" name="name" class="form-input" placeholder="e.g. Sports Hub External Portal" data-validate="required">
+                <span class="form-hint">Internal/admin name — used in admin lists, audit logs, search.</span>
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label form-label-required" for="siteUrl">Website URL</label>
+                <input type="url" id="siteUrl" name="url" class="form-input" placeholder="https://example.com" data-validate="url">
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label form-label-required" for="buttonName">Button Name</label>
+                <input type="text" id="buttonName" name="button_name" class="form-input" placeholder="e.g. Sports Hub" maxlength="24" data-validate="buttonName">
+                <span class="form-hint">This label appears in the sidebar menu. Keep it short (max 24 characters).</span>
+                <span class="form-error"></span>
+
+                <!-- Live Preview -->
+                <div class="button-name-preview">
+                  <div class="button-name-preview-label">Sidebar Preview:</div>
+                  <div class="button-name-preview-item">
+                    <span class="nav-child-site-dot" style="background:var(--color-saffron-300);"></span>
+                    <span>Your Button Name</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="siteDescription">Description</label>
+                <textarea id="siteDescription" name="description" class="form-input" placeholder="Optional description of this website" rows="3"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="wizard-card-footer">
+            <a href="dashboard.html" class="btn btn-ghost">Cancel</a>
+            <button class="btn btn-primary" data-wizard-next>
+              Continue
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ═══ STEP 2: Connection Type ═══ -->
+        <div class="wizard-panel" id="step2">
+          <div class="wizard-card-header">
+            <h2>Choose Connection Type</h2>
+            <p>How do you want to connect this website to the platform?</p>
+          </div>
+          <div class="wizard-card-body">
+            <div class="connection-choices">
+              <div class="connection-choice selected">
+                <div class="connection-choice-radio"></div>
+                <div class="connection-choice-info">
+                  <h4>Connect an existing website</h4>
+                  <p>Link to a website that's already live elsewhere. The platform will route traffic through the Access Gateway.</p>
+                </div>
+              </div>
+              <div class="connection-choice">
+                <div class="connection-choice-radio"></div>
+                <div class="connection-choice-info">
+                  <h4>Create a new website through this platform</h4>
+                  <p>Build and host a new website directly on the platform. The Provisioning Service will set everything up.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wizard-card-footer">
+            <button class="btn btn-ghost" data-wizard-prev>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back
+            </button>
+            <button class="btn btn-primary" data-wizard-next>
+              Continue
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ═══ STEP 3: Confirm ═══ -->
+        <div class="wizard-panel" id="step3">
+          <div class="wizard-card-header">
+            <h2>Confirm & Add</h2>
+            <p>Review the details below and confirm to add this child website.</p>
+          </div>
+          <div class="wizard-card-body">
+            <div style="background:var(--color-cream);border-radius:var(--radius-sm);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4);">
+              <div>
+                <div class="text-xs text-muted mb-1">Website Name</div>
+                <div style="font-weight:600;color:var(--color-dark);">Sports Hub External Portal</div>
+              </div>
+              <div>
+                <div class="text-xs text-muted mb-1">Button Name (sidebar label)</div>
+                <div style="font-weight:600;color:var(--color-saffron-dark);">Sports Hub</div>
+              </div>
+              <div>
+                <div class="text-xs text-muted mb-1">URL</div>
+                <div style="font-weight:500;color:var(--color-dark);">https://sports.example.com</div>
+              </div>
+              <div>
+                <div class="text-xs text-muted mb-1">Connection Type</div>
+                <span class="badge badge-saffron">Existing Website</span>
+              </div>
+              <div>
+                <div class="text-xs text-muted mb-1">Initial Status</div>
+                <span class="badge badge-success">Active</span>
+              </div>
+            </div>
+          </div>
+          <div class="wizard-card-footer">
+            <button class="btn btn-ghost" data-wizard-prev>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back
+            </button>
+            <button class="btn btn-primary btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Add Website
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../app.js"></script>
+</body>
+</html>

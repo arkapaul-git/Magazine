@@ -1,0 +1,35 @@
+[
+  {
+    "id": "mag-001",
+    "title": "Tech Weekly",
+    "category": "Technology",
+    "coverImage": "assets/images/covers/tech-weekly.webp",
+    "description": "Your weekly dose of cutting-edge technology news, in-depth reviews, and expert analysis on AI, cybersecurity, cloud computing, and the future of digital innovation.",
+    "publisher": "Platform Editorial Team",
+    "postCount": 42,
+    "subscriberCount": 1240,
+    "isPublic": true
+  },
+  {
+    "id": "mag-002",
+    "title": "Sports Daily",
+    "category": "Sports",
+    "coverImage": "assets/images/covers/sports-daily.webp",
+    "description": "Comprehensive sports coverage spanning cricket, football, athletics, and emerging sports. Features match analysis, player profiles, and behind-the-scenes stories from the world of sports.",
+    "publisher": "Sports Desk",
+    "postCount": 78,
+    "subscriberCount": 2350,
+    "isPublic": true
+  },
+  {
+    "id": "mag-003",
+    "title": "Kids Zone",
+    "category": "Education",
+    "coverImage": "assets/images/covers/kids-zone.webp",
+    "description": "A fun and educational magazine for young readers. Packed with science experiments, creative stories, puzzles, art projects, and inspiring content designed to spark curiosity and imagination.",
+    "publisher": "Education Wing",
+    "postCount": 35,
+    "subscriberCount": 890,
+    "isPublic": true
+  }
+]

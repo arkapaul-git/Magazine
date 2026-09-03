@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════════════════════════
+   main.css — CSS Aggregator
+   Single import file that pulls in all CSS in correct
+   cascade order. This is the only CSS file linked in HTML.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Base (must come first) ── */
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+@import url('./base/typography.css');
+
+/* ── 2. Layout ── */
+@import url('./layout/container.css');
+@import url('./layout/grid.css');
+@import url('./layout/header.css');
+@import url('./layout/footer.css');
+@import url('./layout/sidebar.css');
+
+/* ── 3. Components ── */
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/forms.css');
+@import url('./components/badges.css');
+@import url('./components/nav.css');
+@import url('./components/modal.css');
+@import url('./components/hero.css');
+
+/* ── 4. Page-Specific Styles ── */
+@import url('./styles/landing.css');
+@import url('./styles/auth.css');
+@import url('./styles/dashboard.css');
+@import url('./styles/magazine-detail.css');
+@import url('./styles/wizard.css');
+
+/* ── 5. Utilities ── */
+@import url('./utilities/spacing.css');
+@import url('./utilities/display.css');
+@import url('./utilities/responsive.css');
+
+/* ── 6. Animations (last, so they can override) ── */
+@import url('./animations/transitions.css');
+@import url('./animations/hover-effects.css');
+@import url('./animations/scroll-reveal.css');
+@import url('./animations/loading.css');

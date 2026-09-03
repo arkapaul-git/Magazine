@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════════════════════════════
+   dashboard.css — Dashboard Main Content Area
+   Layout for the area next to the sidebar.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Dashboard Page ─── */
+.dashboard-page {
+  min-height: 100vh;
+  background: var(--color-cream);
+}
+
+/* ─── Main Content ─── */
+.dashboard-main {
+  margin-left: var(--sidebar-width);
+  padding: var(--space-8);
+  min-height: 100vh;
+}
+
+/* ─── Dashboard Top Bar ─── */
+.dashboard-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+}
+
+.dashboard-topbar-left h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-dark);
+  margin-bottom: var(--space-1);
+}
+
+.dashboard-topbar-left p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.dashboard-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ─── Welcome Banner ─── */
+.welcome-banner {
+  background: linear-gradient(135deg, var(--color-maroon-dark), var(--color-maroon));
+  border-radius: var(--radius-md);
+  padding: var(--space-10) var(--space-8);
+  color: var(--color-white);
+  margin-bottom: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.15);
+  pointer-events: none;
+}
+
+.welcome-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.08);
+  pointer-events: none;
+}
+
+.welcome-banner h2 {
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-banner p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Dashboard Stats ─── */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* ─── Dashboard Section ─── */
+.dashboard-section {
+  margin-bottom: var(--space-8);
+}
+
+.dashboard-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.dashboard-section-header h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-dark);
+}
+
+/* ─── Recent Items List ─── */
+.recent-list {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border-light);
+  transition: var(--transition-fast);
+}
+
+.recent-item:last-child {
+  border-bottom: none;
+}
+
+.recent-item:hover {
+  background: var(--color-saffron-50);
+}
+
+.recent-item-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.recent-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recent-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.recent-item-title {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-item-meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    margin-left: 0;
+    padding: var(--space-6);
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+}

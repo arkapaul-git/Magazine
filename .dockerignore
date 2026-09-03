@@ -1,0 +1,35 @@
+# ═══════════════════════════════════════════════════════════════
+# .dockerignore — Exclude non-production files from Docker build
+# ═══════════════════════════════════════════════════════════════
+
+# Version control
+.git
+.gitignore
+
+# Documentation (not served in production)
+docs/
+README.md
+parent_child_site_architecture_v2.md
+
+# Docker & Scripts (not needed inside container)
+Dockerfile
+docker-compose.yml
+.dockerignore
+scripts/
+
+# Data files (not served in production — blocked by nginx anyway)
+data/
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Agents
+.agents/
+.gemini/

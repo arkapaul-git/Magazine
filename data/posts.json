@@ -1,0 +1,44 @@
+[
+  {
+    "id": "post-001",
+    "magazineId": "mag-001",
+    "title": "The Rise of Generative AI in 2026",
+    "date": "2026-08-28",
+    "isPublic": false
+  },
+  {
+    "id": "post-002",
+    "magazineId": "mag-001",
+    "title": "Cloud Computing Trends to Watch",
+    "date": "2026-08-22",
+    "isPublic": false
+  },
+  {
+    "id": "post-003",
+    "magazineId": "mag-001",
+    "title": "Cybersecurity in the Age of Quantum Computing",
+    "date": "2026-08-15",
+    "isPublic": false
+  },
+  {
+    "id": "post-004",
+    "magazineId": "mag-002",
+    "title": "IPL 2026 Season Preview & Predictions",
+    "date": "2026-08-30",
+    "isPublic": false
+  },
+  {
+    "id": "post-005",
+    "magazineId": "mag-002",
+    "title": "FIFA World Cup Qualifiers Recap",
+    "date": "2026-08-25",
+    "isPublic": false
+  },
+  {
+    "id": "post-006",
+    "magazineId": "mag-003",
+    "title": "Fun Science Experiments You Can Do at Home",
+    "date": "2026-08-29",
+    "isPublic": false
+  }
+]

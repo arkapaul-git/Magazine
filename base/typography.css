@@ -1,0 +1,157 @@
+/* ═══════════════════════════════════════════════════════════════
+   typography.css — Font Imports & Type Scale
+   Google Fonts: Playfair Display (headings), Poppins (body),
+   Rajdhani (accents). Matches rkmvmfamily.in font stack.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Google Fonts Import ─── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* ─── Body Defaults ─── */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+}
+
+/* ─── Heading Hierarchy ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-4xl);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
+
+/* ─── Paragraph ─── */
+p {
+  margin-bottom: var(--space-4);
+  max-width: 72ch;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Small / Caption ─── */
+small,
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+/* ─── Lead Text ─── */
+.text-lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* ─── Accent Font ─── */
+.font-accent {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── Display Font ─── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ─── Strong / Bold ─── */
+strong,
+b {
+  font-weight: 600;
+}
+
+/* ─── Links (inline) ─── */
+.link {
+  color: var(--color-saffron);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--color-saffron-dark);
+}
+
+/* ─── Blockquote ─── */
+blockquote {
+  border-left: 4px solid var(--color-saffron);
+  padding-left: var(--space-6);
+  margin: var(--space-6) 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* ─── Code ─── */
+code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  background: var(--color-saffron-50);
+  color: var(--color-maroon);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+}
+
+/* ─── Section Labels ─── */
+.section-label {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: var(--leading-relaxed);
+}

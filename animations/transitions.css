@@ -1,0 +1,8 @@
+/* ═══════════════════════════════════════════════════════════════
+   transitions.css — Shared Transition Definitions
+   ═══════════════════════════════════════════════════════════════ */
+
+.transition-fast   { transition: var(--transition-fast); }
+.transition-smooth { transition: var(--transition-smooth); }
+.transition-slow   { transition: var(--transition-slow); }
+.transition-none   { transition: none; }

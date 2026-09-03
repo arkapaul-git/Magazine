@@ -1,0 +1,94 @@
+/* ═══════════════════════════════════════════════════════════════
+   modal.css — Modal / Dialog Overlay
+   Centered dialog with backdrop for confirmations.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Backdrop ─── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ─── Modal Container ─── */
+.modal {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.3s var(--ease-bounce);
+}
+
+.modal-backdrop.active .modal {
+  transform: scale(1) translateY(0);
+}
+
+/* ─── Modal Header ─── */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--color-cream-dark);
+  color: var(--color-dark);
+}
+
+/* ─── Modal Body ─── */
+.modal-body {
+  padding: var(--space-6);
+}
+
+.modal-body p {
+  color: var(--color-text-muted);
+}
+
+/* ─── Modal Footer ─── */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-cream);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}

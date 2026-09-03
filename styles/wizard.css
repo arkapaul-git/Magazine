@@ -1,0 +1,260 @@
+/* ═══════════════════════════════════════════════════════════════
+   wizard.css — Add Child Site Wizard
+   Multi-step form with step indicators and transitions.
+   ═══════════════════════════════════════════════════════════════ */
+
+.wizard-page {
+  min-height: 100vh;
+  background: var(--color-cream);
+  padding-top: calc(var(--header-height) + var(--space-8));
+  padding-bottom: var(--space-16);
+}
+
+/* ─── Wizard Container ─── */
+.wizard {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+/* ─── Step Indicator ─── */
+.wizard-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: var(--space-10);
+}
+
+.wizard-step {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.wizard-step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: var(--color-white);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.wizard-step-circle.active {
+  border-color: var(--color-saffron);
+  color: var(--color-saffron);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+}
+
+.wizard-step-circle.completed {
+  border-color: var(--color-saffron);
+  background: var(--color-saffron);
+  color: var(--color-white);
+}
+
+.wizard-step-line {
+  width: 80px;
+  height: 2px;
+  background: var(--color-border);
+  transition: background 0.4s ease;
+}
+
+.wizard-step-line.completed {
+  background: var(--color-saffron);
+}
+
+.wizard-step-label {
+  position: absolute;
+  top: 48px;
+  white-space: nowrap;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.wizard-step-circle.active .wizard-step-label {
+  color: var(--color-saffron-dark);
+  font-weight: 600;
+}
+
+/* ─── Wizard Card ─── */
+.wizard-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.wizard-card-header {
+  padding: var(--space-8) var(--space-8) var(--space-4);
+}
+
+.wizard-card-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-dark);
+  margin-bottom: var(--space-2);
+}
+
+.wizard-card-header p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.wizard-card-body {
+  padding: var(--space-4) var(--space-8) var(--space-8);
+}
+
+.wizard-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-8);
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* ─── Wizard Panel (Step Content) ─── */
+.wizard-panel {
+  display: none;
+}
+
+.wizard-panel.active {
+  display: block;
+  animation: wizardFadeIn 0.4s var(--ease-smooth);
+}
+
+@keyframes wizardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Connection Type Choice ─── */
+.connection-choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.connection-choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-cream);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.connection-choice:hover {
+  border-color: var(--color-saffron-200);
+  background: var(--color-saffron-50);
+}
+
+.connection-choice.selected {
+  border-color: var(--color-saffron);
+  background: var(--color-saffron-50);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+
+.connection-choice-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.connection-choice.selected .connection-choice-radio {
+  border-color: var(--color-saffron);
+}
+
+.connection-choice.selected .connection-choice-radio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-saffron);
+}
+
+.connection-choice-info h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+}
+
+.connection-choice-info p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── Button Name Preview ─── */
+.button-name-preview {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-cream);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--color-border);
+}
+
+.button-name-preview-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.button-name-preview-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-white);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-saffron-dark);
+  border: 1px solid var(--color-saffron-200);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .wizard {
+    padding: 0 var(--space-4);
+  }
+
+  .wizard-step-line {
+    width: 40px;
+  }
+
+  .wizard-step-label {
+    display: none;
+  }
+
+  .wizard-card-header,
+  .wizard-card-body {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+  }
+}

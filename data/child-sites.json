@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cs-001",
+    "name": "Sports Hub External Portal",
+    "button_name": "Sports Hub",
+    "url": "https://sports.example.com",
+    "description": "Complete sports portal with live scores and match schedules",
+    "status": "ACTIVE",
+    "connection_type": "EXISTING_WEBSITE",
+    "owner_id": "admin-001"
+  },
+  {
+    "id": "cs-002",
+    "name": "Tech Corner Blog v2 (2026)",
+    "button_name": "Tech Corner",
+    "url": "https://tech.example.com",
+    "description": "Technology blog with articles, tutorials, and reviews",
+    "status": "ACTIVE",
+    "connection_type": "PLATFORM_CREATED",
+    "owner_id": "admin-001"
+  },
+  {
+    "id": "cs-003",
+    "name": "Kids Activity Zone",
+    "button_name": "Kids Zone",
+    "url": "https://kids.example.com",
+    "description": "Interactive activities and educational content for children",
+    "status": "ACTIVE",
+    "connection_type": "EXISTING_WEBSITE",
+    "owner_id": "admin-002"
+  }
+]
