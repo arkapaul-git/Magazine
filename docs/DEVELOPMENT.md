@@ -24,6 +24,23 @@ python -m http.server 8080
 # Install "Live Server" extension → right-click index.html → "Open with Live Server"
 ```
 
+**Running the Backend Microservices (Local Dev)**:
+
+We use Node.js and SQLite for local backend development.
+```bash
+# Terminal 1 - API Gateway
+cd backend/gateway-service && npm start
+
+# Terminal 2 - Landing Service
+cd backend/landing-service && npm start
+
+# Terminal 3 - Auth Service
+cd backend/auth-service && npm start
+
+# Terminal 4 - User Service
+cd backend/user-service && npm start
+```
+
 **Docker** — for production-like deployment with security hardening:
 
 ```bash
@@ -131,6 +148,12 @@ Magazine/
 ├── Dockerfile              # Docker image definition
 ├── docker-compose.yml      # Docker service config
 ├── .dockerignore           # Docker build exclusions
+│
+├── backend/                # Node.js Microservices (Phase 1)
+│   ├── gateway-service/    # Port 3000
+│   ├── landing-service/    # Port 3001
+│   ├── auth-service/       # Port 3002
+│   └── user-service/       # Port 3003
 │
 └── docs/                   # Documentation
     ├── DOCUMENTATION.md
